@@ -1,0 +1,36 @@
+<h1 id="tableLabel">Document List</h1>
+
+<td *ngIf="selectedDocument">
+  <button (click)="saveDocument(selectedDocument.name)">Save</button>
+</td>
+
+<p *ngIf="!documentList"><em>Loading... Please refresh once the ASP.NET backend has started.</em></p>
+
+<div class="container">
+  <table *ngIf="documentList">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let document of documentList">
+        <td>{{ document.name }}</td>
+        <td>
+          <button (click)="loadDocument(document.name)">Load</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container container-70">
+
+  <tx-document-editor width="800px"
+                      height="600px"
+                      webSocketURL="wss://localhost:7125/TXWebSocket"
+                      [editMode]="selectedDocument === undefined ? 'ReadOnly' : 'Edit'">
+  </tx-document-editor>
+
+</div>

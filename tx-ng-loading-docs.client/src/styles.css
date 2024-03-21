@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 1rem;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.filelist th, .filelist td {
+  border: 1px solid #ddd;
+  padding: 4px;
+  text-align: left;
+}
+
+
